@@ -8,8 +8,8 @@ void CudaBackgroundSubtractorMOG2_Close(CudaBackgroundSubtractorMOG2 b) {
     delete b;
 }
 
-void CudaBackgroundSubtractorMOG2_Apply(CudaBackgroundSubtractorMOG2 b, GpuMat src, GpuMat dst) {
-    (*b)->apply(*src, *dst);
+void CudaBackgroundSubtractorMOG2_Apply(CudaBackgroundSubtractorMOG2 b, GpuMat src, GpuMat dst, Stream s) {
+    (*b)->apply(*src, *dst, s);
 }
 
 CudaBackgroundSubtractorMOG CudaBackgroundSubtractorMOG_Create() {
@@ -20,6 +20,6 @@ void CudaBackgroundSubtractorMOG_Close(CudaBackgroundSubtractorMOG b) {
     delete b;
 }
 
-void CudaBackgroundSubtractorMOG_Apply(CudaBackgroundSubtractorMOG b, GpuMat src, GpuMat dst) {
-    (*b)->apply(*src, *dst);
+void CudaBackgroundSubtractorMOG_Apply(CudaBackgroundSubtractorMOG b, GpuMat src, GpuMat dst, Stream s) {
+    (*b)->apply(*src, *dst, s);
 }
